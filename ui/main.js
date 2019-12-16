@@ -19,6 +19,8 @@ import { Fill, Icon, Stroke, Style } from 'ol/style';
 // coordinates directly to map coordinates, so we create a projection that uses
 // the image extent in pixels.
 var extent = [0, 0, 1024, 968];
+const buffer = 500;
+const limit = [extent[0] - buffer, extent[1], extent[2] + buffer, extent[3]]
 var projection = new Projection({
   code: 'xkcd-image',
   units: 'pixels',
@@ -60,7 +62,7 @@ const vector = new VectorLayer({
 });
 
 var map = new Map({
-  controls: [mousePositionControl],
+  controls: [],
   layers: [
     new ImageLayer({
       source: new Static({
@@ -75,8 +77,9 @@ var map = new Map({
   view: new View({
     projection: projection,
     center: getCenter(extent),
-    zoom: 2,
-    maxZoom: 16
+    zoom: 0,
+    maxZoom: 16,
+    extent: limit,
   })
 });
 
