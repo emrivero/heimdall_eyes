@@ -1,8 +1,14 @@
+/**
+ * @public
+ */
 export const generateID = (instance) => {
   const rand = Math.random().toString().slice(2);
   return `${rand}_${instance}`;
 };
 
+/**
+ * @public
+ */
 export const detectOverflow = (coord, extent) => {
   const minX = extent[0];
   const maxX = extent[2];
@@ -15,4 +21,19 @@ export const detectOverflow = (coord, extent) => {
   ];
 
   return coordinates
+};
+
+/**
+ * @public
+ */
+export const validate = (options = {}, parameters = []) => {
+  parameters.forEach(parameter => {
+    if (!(parameter in options)) {
+      console.warn(`${parameter} is not setted.`);
+    }
+
+    if (parameter === null || parameter === undefined) {
+      console.warn(`${parameter} is null or undefined.`);
+    }
+  });
 };

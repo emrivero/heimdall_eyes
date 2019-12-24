@@ -1,3 +1,4 @@
+import GameToken from './GameToken';
 import ImageLayer from 'ol/layer/Image';
 import Static from 'ol/source/ImageStatic';
 import { generateID } from '../util';
@@ -44,9 +45,12 @@ export default class GameLevel extends Parent {
         imageExtent: extent,
       }),
       visible: this.active,
+      zIndex: this.zIndex,
     });
 
-    this.tokens = options.tokens;
+    this.tokens = options.tokens || [];
+
+    this.tokens = this.tokens.map(token => new GameToken({ ...token, zIndex: this.zIndex + 1 }));
   }
 
   /**
@@ -55,6 +59,8 @@ export default class GameLevel extends Parent {
    */
   addTo(map) {
     map.addLayer(this.olLayer);
+    this.tokens.forEach(token => token.addTo(map));
+    this.emit('created_tokens', this.tokens);
   }
 
   /**

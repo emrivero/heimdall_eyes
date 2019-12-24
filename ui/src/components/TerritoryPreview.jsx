@@ -31,7 +31,7 @@ function TerritoryPreview(props) {
         <div className={classes.title}>
           <Typography align="center" variant="h4">{props.id}</Typography>
         </div>
-        <img src={props.src} onClick={() => props.onClick(props.id)} alt="territory" width="100%" />
+        <img src={props.src} onClick={() => props.onClick(props.name)} alt="territory" width="100%" />
       </div>
     </React.Fragment>
   );

@@ -3,10 +3,15 @@ import Game from '../entities/Game';
 class MapController {
 
   init() {
+    // TODO: Manejar mas de un juego
+
     const { games } = this.configuration;
 
-    // TODO: Manejar mas de un juego
     this.game = new Game(games[0]);
+  }
+
+  setActive(name) {
+    this.game.setActive(name);
   }
 }
 

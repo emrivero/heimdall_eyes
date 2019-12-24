@@ -6,6 +6,7 @@ import { extent, limit, projection } from './constants';
 import { Translate } from 'ol/interaction';
 import { getCenter } from 'ol/extent';
 import Territory from './Territory';
+import { MistManager, mist } from './Mist';
 
 /**
  * @classdesc
@@ -32,6 +33,7 @@ export default class Game extends Parent {
      */
     this.map = new Map({
       controls: [],
+      layers: [mist.layer],
       target: 'map',
       view: new View({
         projection: projection,
@@ -42,7 +44,12 @@ export default class Game extends Parent {
       }),
     });
 
-    window.map = this.map;
+    this.translate = new Translate({
+      filter: (feature, layer) => layer.get('id') !== 'mist',
+    });
+    this.map.addInteraction(this.translate);
+
+    new MistManager(this.translate);
 
     /**
      * @public
@@ -50,7 +57,11 @@ export default class Game extends Parent {
     this.territories = options.territories.map(config => new Territory(config));
 
     this.territories.forEach(territory => territory.addTo(this.map));
-    this.map.addInteraction(new Translate());
+  }
+
+  setActive(name) {
+    this.territories.forEach(territory => territory.deactivate());
+    this.territories.find(territory => territory.name === name).activate();
   }
 
   /**

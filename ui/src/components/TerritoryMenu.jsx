@@ -11,10 +11,11 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
   },
   drawer: {
-    width: drawerWidth,
     flexShrink: 0,
+    width: drawerWidth,
   },
   drawerPaper: {
+    backgroundColor: '#ddd',
     width: drawerWidth,
   },
 }));

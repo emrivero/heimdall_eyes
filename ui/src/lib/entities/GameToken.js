@@ -1,9 +1,10 @@
 import { Feature } from 'ol';
-import { Point } from 'ol/geom';
-import { Style, Icon } from 'ol/style';
+import { Point, Polygon } from 'ol/geom';
 import { Vector as VectorLayer } from 'ol/layer';
 import { Vector as VectorSource } from 'ol/source';
 import { Icon, Style } from 'ol/style';
+import Parent from './Parent';
+import { validate } from '../util';
 
 /**
  * @class
@@ -12,7 +13,7 @@ export default class GameToken extends Parent {
   constructor(options = {}) {
     super();
 
-    // const normalizeCoord = detectOverflow(options.coordinates, extent);
+    validate(options, ['id', 'coords', 'size', 'src', 'visionRange']);
 
     /**
      * @public
@@ -22,23 +23,30 @@ export default class GameToken extends Parent {
     /**
      * @public
      */
-    this.feature = new Feature(new Point([0, 0]));
+    this.coords = options.coords || [500, 500];
+    /**
+     * @public
+     */
+    this.feature = new Feature(new Point(this.coords));
 
     /**
      * @public
      */
-    this.feature.setStyle(new Style({
-      image: new Icon({
-        src: options.image,
-      }),
-    }));
+    this.size = options.size || [0, 0];
+
+    /**
+     * @public
+     */
+    this.scale = 0.05;
+
 
     /**
      * @public
      */
     this.image = new Icon({
-      scale: 0.05,
+      scale: this.scale,
       src: options.src,
+      size: [827, 827],
     });
 
     /**
@@ -52,30 +60,34 @@ export default class GameToken extends Parent {
      * @public
      */
     this.olLayer = new VectorLayer({
+      zIndex: options.zIndex,
       source: new VectorSource({
         features: [this.feature],
       }),
-      style(feature, resolution) {
+      style: (feature, resolution) => {
         const proportion = resolution / 1.174250832408435;
-        let scale = 0.05;
-
         if (resolution < 1) {
-          scale = 0.03 / proportion;
+          this.scale = 0.03 / proportion;
         }
 
-        this.image.setScale(scale);
+        this.image.setScale(this.scale);
 
         return this.style;
       }
     });
 
+    /**
+     * @public
+     */
+    this.visionRange = options.visionRange || 1;
   }
 
   /**
    * @public
    */
   addTo(map) {
-    map.addLayers(this.olLayer);
+    map.addLayer(this.olLayer);
+    this.emit('added_token', this);
   }
 
   /**
@@ -90,6 +102,24 @@ export default class GameToken extends Parent {
    */
   deactivate() {
     this.olLayer.setVisible(false);
+  }
+
+  /**
+   * @public
+   */
+  getCoordinates() {
+    return this.feature.getGeometry().getCoordinates();
+  }
+
+  /**
+   * @function
+   */
+  getVisibilityRange() {
+    return this.size[0] * this.scale * this.visionRange;
+  }
+
+  getPixelsPosition(map) {
+    return map.getPixelFromCoordinate(this.getCoordinates());
   }
 
   /**
