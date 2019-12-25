@@ -6,7 +6,7 @@ import { extent, limit, projection } from './constants';
 import { Translate } from 'ol/interaction';
 import { getCenter } from 'ol/extent';
 import Territory from './Territory';
-import { MistManager, mist } from './Mist';
+import MistManager from './Mist';
 
 /**
  * @classdesc
@@ -33,13 +33,12 @@ export default class Game extends Parent {
      */
     this.map = new Map({
       controls: [],
-      layers: [mist.layer],
       target: 'map',
       view: new View({
         projection: projection,
         center: getCenter(extent),
         zoom: 0,
-        maxZoom: 10,
+        maxZoom: 8,
         extent: limit,
       }),
     });
@@ -49,7 +48,10 @@ export default class Game extends Parent {
     });
     this.map.addInteraction(this.translate);
 
-    new MistManager(this.translate);
+    this.mistManger = new MistManager(this.translate);
+
+    this.mistManger.addTo(this.map);
+
 
     /**
      * @public

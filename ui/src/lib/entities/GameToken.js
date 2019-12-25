@@ -1,10 +1,10 @@
 import { Feature } from 'ol';
-import { Point, Polygon } from 'ol/geom';
+import { Point } from 'ol/geom';
 import { Vector as VectorLayer } from 'ol/layer';
 import { Vector as VectorSource } from 'ol/source';
 import { Icon, Style } from 'ol/style';
 import Parent from './Parent';
-import { validate } from '../util';
+import { validate, getRegularPolygon } from '../util';
 
 /**
  * @class
@@ -88,6 +88,7 @@ export default class GameToken extends Parent {
   addTo(map) {
     map.addLayer(this.olLayer);
     this.emit('added_token', this);
+    window.map = map;
   }
 
   /**
@@ -120,6 +121,10 @@ export default class GameToken extends Parent {
 
   getPixelsPosition(map) {
     return map.getPixelFromCoordinate(this.getCoordinates());
+  }
+
+  getContainerPolygon() {
+    return getRegularPolygon(this.getCoordinates(), this.visionRange, 60);
   }
 
   /**

@@ -37,3 +37,19 @@ export const validate = (options = {}, parameters = []) => {
     }
   });
 };
+
+
+/**
+ * @function
+ */
+export const getRegularPolygon = (center, radius, sides) => {
+  const oneDeg = Math.PI / 180;
+  const unit = (360 * oneDeg) / sides;
+  const angles = [];
+  for (let i = 0; i < sides; i++) {
+    angles.push(unit * i);
+  }
+  angles.push(0);
+
+  return angles.map(angle => [center[0] + radius * Math.cos(angle), center[1] + radius * Math.sin(angle)]);
+};

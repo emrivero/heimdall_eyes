@@ -2,3 +2,8 @@
     width: 100%;
     height: 98vh;
 }
+
+body {
+    background-image: url('../images/decoration/fondo.jpg');
+    background-size: cover;
+}

@@ -3,56 +3,28 @@ import { Vector as VectorSource } from "ol/source";
 import { Feature } from "ol";
 import { Polygon } from "ol/geom";
 import Style from "ol/style/Style";
-import Fill from "ol/style/Fill";
+import { Fill } from "ol/style";
 import { extent } from './constants';
 import Parent from './Parent';
 import difference from '@turf/difference/index.js';
 import { polygon as createPolygon } from '@turf/helpers';
+import mistImage from '../../assets/images/misc/mist.png'
 
-const geometry = new Polygon([
-  [
-    [extent[0], extent[1]],
-    [extent[0], extent[3]],
-    [extent[2], extent[3]],
-    [extent[2], extent[1]],
-    [extent[0], extent[1]],
-
-  ]
-]);
-
-const feature = new Feature({
-  geometry,
-});
-
-const layer = new VectorLayer({
-  source: new VectorSource({
-    features: [feature],
-  }),
-  style: new Style({
-    fill: new Fill({
-      color: 'rgba(0,0,0,1)',
-
-    }),
-  }),
-  zIndex: 1000,
-});
-
-layer.set('id', 'mist');
-
-export const mist = {
-  geometry,
-  feature,
-  layer,
-};
 
 /**
  * @class
  */
-export class MistManager extends Parent {
-  constructor(translate) {
+export default class MistManager extends Parent {
+  constructor(translate, map) {
     super();
+
     this.translate = translate;
+
+    this.map = map;
+
     this.tokens = []
+
+
     this.on('created_tokens', tokens => {
       if (tokens.length > 0) {
         this.tokens = tokens;
@@ -64,37 +36,78 @@ export class MistManager extends Parent {
       this.createCircleMist()
     });
 
-    this.translate.on('translateend', () => {
-      this.createCircleMist()
+    this.geometry = new Polygon([
+      [
+        [extent[0], extent[1]],
+        [extent[0], extent[3]],
+        [extent[2], extent[3]],
+        [extent[2], extent[1]],
+        [extent[0], extent[1]],
+
+      ]
+    ]);
+
+    this.feature = new Feature({
+      geometry: this.geometry,
     });
-    this.translate.on('translatestart', () => {
-      this.createCircleMist()
+
+    this.layer = new VectorLayer({
+      renderBuffer: 10000,
+      source: new VectorSource({
+        features: [this.feature],
+      }),
+      style: new Style({
+        fill: new Fill({
+          color: "#eee",
+        }),
+      }),
+      zIndex: 1000,
     });
+
+    this.layer.set('id', 'mist');
+
+
+    /**
+     * Create mist style image
+     */
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    const img = new Image();
+    img.onload = () => {
+      img.width = 2000;
+      img.height = 2000;
+      ctx.drawImage(img, 0, 0, 4726 * 5, 5231 * 5, 0, 0, 2000, 2000);
+      const pattern = ctx.createPattern(canvas, 'repeat');
+      const style = new Style({
+        fill: new Fill({
+          color: pattern,
+        }),
+      });
+      this.layer.setStyle(style);
+    }
+    img.src = mistImage;
   }
 
+  addTo(map) {
+    this.map = map;
+    this.map.addLayer(this.layer);
+  }
+
+
   createCircleMist() {
-    console.log('illooo');
-    const polygonCoords = mist.geometry.getCoordinates();
+
+
+    const polygonCoords = this.geometry.getCoordinates();
     let newGeom = new Polygon(polygonCoords);
     this.tokens.forEach(token => {
       const coords = newGeom.getCoordinates();
-      const radius = token.visionRange;
-      const center = token.getCoordinates();
-
+      const coordinates = token.getContainerPolygon();
       const polygon = createPolygon(coords);
-      const circle = createPolygon([
-        [
-          [center[0] - radius, center[1] - radius],
-          [center[0] - radius, center[1] + radius],
-          [center[0] + radius, center[1] + radius],
-          [center[0] + radius, center[1] - radius],
-          [center[0] - radius, center[1] - radius],
-        ]
-      ]);
+      const circle = createPolygon([coordinates]);
 
       const diff = difference(polygon, circle);
       newGeom.setCoordinates(diff.geometry.coordinates);
     })
-    mist.feature.setGeometry(newGeom);
+    this.feature.setGeometry(newGeom);
   }
 }

@@ -5,13 +5,14 @@ import level22_img from '../assets/images/levels/level22.png'
 import level23_img from '../assets/images/levels/level23.png'
 import gunar from '../assets/images/pjs/gunar.png'
 import aliena from '../assets/images/pjs/aliena.png'
+import elba from '../assets/images/pjs/elba.png'
 
 const gunarToken = {
   id: 'gunar',
   src: gunar,
   size: [827, 827],
   visionRange: 30,
-  coords: [500, 500]
+  coords: [120, 120]
 };
 
 const alienaToken = {
@@ -19,7 +20,15 @@ const alienaToken = {
   src: aliena,
   size: [827, 827],
   visionRange: 30,
-  coords: [300, 300]
+  coords: [140, 140]
+};
+
+const elbaToken = {
+  id: 'elba',
+  src: elba,
+  size: [827, 827],
+  visionRange: 50,
+  coords: [100, 100]
 };
 
 const level11 = {
@@ -31,7 +40,7 @@ const level11 = {
 const level12 = {
   name: 'level12',
   zIndex: 2,
-  tokens: [gunarToken, alienaToken],
+  tokens: [gunarToken, alienaToken, elbaToken],
   src: level12_img,
 };
 

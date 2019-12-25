@@ -6,17 +6,23 @@ const useStyles = makeStyles(theme => ({
   root: {
     cursor: 'pointer',
     opacity: 1,
-    '&:hover title': {
-
-    }
+    backgroundColor: '#000',
+    border: '2px solid #eee',
+    padding: '2px',
+    borderRadius: '5px',
+    display: 'flex',
   },
-
   title: {
     display: 'flex',
     alignItems: 'center',
     position: 'absolute',
     opacity: 0,
     width: '100%',
+  },
+  img: {
+    borderRadius: '3px',
+    width: '100%',
+    height: '100%'
   }
 }));
 
@@ -26,14 +32,12 @@ const useStyles = makeStyles(theme => ({
 function TerritoryPreview(props) {
   const classes = useStyles()
   return (
-    <React.Fragment>
-      <div className={classes.root}>
-        <div className={classes.title}>
-          <Typography align="center" variant="h4">{props.id}</Typography>
-        </div>
-        <img src={props.src} onClick={() => props.onClick(props.name)} alt="territory" width="100%" />
+    <div className={classes.root}>
+      <div className={classes.title}>
+        <Typography align="center" variant="h4">{props.id}</Typography>
       </div>
-    </React.Fragment>
+      <img src={props.src} onClick={() => props.onClick(props.name)} alt="territory" className={classes.img} />
+    </div>
   );
 }
 
