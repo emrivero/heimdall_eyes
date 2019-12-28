@@ -7,3 +7,7 @@ body {
     background-image: url('../images/decoration/fondo.jpg');
     background-size: cover;
 }
+
+div::-webkit-scrollbar {
+    display: none;
+}

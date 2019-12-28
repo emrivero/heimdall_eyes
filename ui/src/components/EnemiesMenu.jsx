@@ -1,66 +1,61 @@
 import React from 'react';
 import SliderMenu from './SliderMenu';
 
-const drawerWidth = 240;
+const drawerWidth = 550;
 
-export default function TerritoryMenu(props) {
-
-  const { length } = props;
-
-  let height = `${150 * length}px`;
-  if (length < 3) {
-    height = 'auto';
-  }
-
+export default function EnemiesMenu(props) {
   return (
     <SliderMenu
       inheritedClasses={{
         root: {
+          top: '300px',
+          left: 'calc(100% - 550px)',
           width: drawerWidth,
-          height: height,
+          height: '200px',
           position: 'absolute',
-          top: '100px',
         },
         root_close: {
+          top: '300px',
+          left: 'calc(100% - 75px)',
           width: 0,
-          height: height,
+          height: '200px',
           position: 'absolute',
-          top: '100px',
         },
         drawer: {
           flexShrink: 0,
           width: drawerWidth,
         },
         drawerPaper: {
-          top: '100px',
+          left: 'calc(100% - 550px)',
+          top: '300px',
           backgroundColor: 'transparent',
-          height: height,
           width: drawerWidth,
+          height: '200px',
         },
         drawerPaper_close: {
+          left: '100%',
+          top: '300px',
           backgroundColor: 'transparent',
-          top: '100px',
-          height: height,
           width: drawerWidth,
-          left: '-240px',
+          height: '200px',
         },
         opener: {
+          left: 'calc(100% - 600px)',
           width: '75px',
           height: '48px',
           position: 'absolute',
-          left: '90%',
-          top: '15%',
-          transform: 'rotate(90deg)',
+          transform: 'rotate(-90deg)',
+          top: '50px'
         },
         opener_close: {
+          left: '90%',
           width: '75px',
           height: '48px',
           position: 'absolute',
-          top: '15%',
-          left: 0,
-          transform: 'rotate(-90deg)',
+          transform: 'rotate(90deg)',
+          top: '50px'
         }
-      }} anchor={'left'}>
+      }} anchor={'right'}>
       {props.children}
     </SliderMenu>
   );

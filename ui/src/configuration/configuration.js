@@ -31,6 +31,10 @@ const elbaToken = {
   coords: [100, 100]
 };
 
+export const playerTokens = [
+  gunarToken, alienaToken, elbaToken, elbaToken, elbaToken, elbaToken, elbaToken
+];
+
 const level11 = {
   name: 'level11',
   zIndex: 0,
@@ -40,7 +44,7 @@ const level11 = {
 const level12 = {
   name: 'level12',
   zIndex: 2,
-  tokens: [gunarToken, alienaToken, elbaToken],
+  tokens: playerTokens,
   src: level12_img,
 };
 
@@ -75,7 +79,7 @@ const territory2 = {
 
 const game2 = {
   title: 'Campaña 2',
-  territories: [territory1, territory2],
+  territories: [territory1, territory2, territory2, territory2, territory2, territory2, territory2, territory2, territory2],
 };
 
 const configuration = {
