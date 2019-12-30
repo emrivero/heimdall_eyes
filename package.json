@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "react-scripts start --no-cache",
-    "build": "react-scripts build",
+    "build": "PUBLIC_URL=https://emrivero.github.io/heimdall_eyes/ react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && cp -r build/* docs/"
+    "deploy": "npm run build && rm -rf docs/* && cp -r build/* docs/"
   },
   "keywords": [],
   "author": "",
