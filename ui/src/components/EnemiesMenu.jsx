@@ -1,59 +1,61 @@
 import React from 'react';
 import SliderMenu from './SliderMenu';
 
-const drawerWidth = 550;
 
 export default function EnemiesMenu(props) {
   return (
     <SliderMenu
       inheritedClasses={{
         root: {
-          top: '300px',
-          left: 'calc(100% - 550px)',
-          width: drawerWidth,
-          height: '200px',
+          top: '100px',
+          left: 'calc(100% - 530px)',
+          height: '220px',
           position: 'absolute',
         },
         root_close: {
-          top: '300px',
+          top: '100px',
           left: 'calc(100% - 75px)',
-          width: 0,
-          height: '200px',
+          height: '220px',
           position: 'absolute',
-        },
-        drawer: {
-          flexShrink: 0,
-          width: drawerWidth,
         },
         drawerPaper: {
-          left: 'calc(100% - 550px)',
-          top: '300px',
+          width: '450px',
+          left: 'calc(100% - 460px)',
+          top: 0,
           backgroundColor: 'transparent',
-          width: drawerWidth,
-          height: '200px',
+          height: 'unset',
+          maxHeight: '100%',
+          border: 'none',
         },
         drawerPaper_close: {
+          width: '450px',
           left: '100%',
-          top: '300px',
+          top: 0,
           backgroundColor: 'transparent',
-          width: drawerWidth,
-          height: '200px',
+          height: 'unset',
+          maxHeight: '100%',
+          border: 'none',
         },
         opener: {
-          left: 'calc(100% - 600px)',
-          width: '75px',
-          height: '48px',
-          position: 'absolute',
-          transform: 'rotate(-90deg)',
-          top: '50px'
+          transform: 'rotate(-45deg)',
         },
         opener_close: {
-          left: '90%',
-          width: '75px',
-          height: '48px',
+        },
+        containerOpener: {
+          zIndex: 2000,
+          top: '50px',
+          left: '10%',
           position: 'absolute',
-          transform: 'rotate(90deg)',
-          top: '50px'
+        },
+        containerOpener_close: {
+          top: '50px',
+          position: 'absolute',
+          left: '90%',
+        },
+        subcontainer: {
+          display: 'flex',
+          flexDirection: 'column',
+          maxHeight: '100%',
         }
       }} anchor={'right'}>
       {props.children}

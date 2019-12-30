@@ -117,9 +117,9 @@ class Levels extends React.Component {
 
     return (
       <div className={classNames(inheritedClasses ? inheritedClasses.root : null, classes.root)}>
-        <img src={flecha_superior} className={classes.arrow_up} width="20%" alt="arrow_up" onClick={this.onChangeUp} />
+        <img src={flecha_superior} className={classNames(inheritedClasses ? inheritedClasses.arrow_up : null, classes.arrow_up)} width="20%" alt="arrow_up" onClick={this.onChangeUp} />
         <img src={imgLevel} alt="level" width="80%" />
-        <img src={flecha_inferior} className={classes.arrow_down} width="20%" alt="arrow_down" onClick={this.onChangeDown} />
+        <img src={flecha_inferior} className={classNames(inheritedClasses ? inheritedClasses.arrow_down : null, classes.arrow_down)} width="20%" alt="arrow_down" onClick={this.onChangeDown} />
       </div>
     );
   }

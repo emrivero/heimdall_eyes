@@ -2,15 +2,26 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import flecha_inferior from 'assets/images/controls/flechas_inferior.png';
+import opener from 'assets/images/controls/opener_menu.png';
 import marco from '../assets/images/decoration/marco.png';
-
+import gema from 'assets/images/decoration/gema_verde.png'
 
 const openArrow = {
-  backgroundImage: `url(${flecha_inferior})`,
+  backgroundImage: `url(${opener})`,
   backgroundSize: 'contain',
   backgroundRepeat: 'no-repeat',
+  height: '65px',
+  width: '65px',
+  margin: '5px'
 };
+
+const circleImage = {
+  backgroundImage: `url(${gema})`,
+  backgroundSize: 'contain',
+  backgroundRepeat: 'no-repeat',
+  height: '75px',
+  width: '75px',
+}
 
 const border = {
   border: '15px solid',
@@ -92,6 +103,14 @@ export default function SliderMenu(props) {
         ...inheritedClasses.openerCloseLG,
       },
     },
+    containerOpener: {
+      ...inheritedClasses.containerOpener,
+      ...circleImage,
+    },
+    containerOpener_close: {
+      ...inheritedClasses.containerOpener_close,
+      ...circleImage,
+    },
     subcontainer: {
       ...inheritedClasses.subcontainer,
     }
@@ -104,15 +123,19 @@ export default function SliderMenu(props) {
   let openerClass = classes.opener;
   let drawerClass = classes.drawerPaper;
   let rootClass = classes.root;
+  let containerOpener = classes.containerOpener;
   if (!isOpen) {
     rootClass = classes.root_close;
     openerClass = classes.opener_close;
     drawerClass = classes.drawerPaper_close;
+    containerOpener = classes.containerOpener_close;
   }
 
   return (
     <div className={rootClass}>
-      <div className={openerClass} onClick={() => open(!isOpen)} />
+      <div className={containerOpener}>
+        <div className={openerClass} onClick={() => open(!isOpen)} />
+      </div>
       <CssBaseline />
       <Drawer
         className={classes.drawer}

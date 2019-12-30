@@ -60,6 +60,7 @@ export default class GameToken extends Parent {
      * @public
      */
     this.olLayer = new VectorLayer({
+      renderBuffer: 10000,
       zIndex: options.zIndex,
       source: new VectorSource({
         features: [this.feature],

@@ -51,8 +51,7 @@ export default class Game extends Parent {
     this.mistManger = new MistManager(this.translate);
 
     this.mistManger.addTo(this.map);
-
-
+    window.game = this;
     /**
      * @public
      */

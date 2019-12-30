@@ -8,7 +8,7 @@ const buffer = 500;
 /**
  * @constant
  */
-export const extent = [0, 0, Math.round(window.innerWidth * 0.9), Math.round(window.innerHeight * 0.9)];
+export const extent = [0, 0, 1024, 768];
 
 /**
  * @constant

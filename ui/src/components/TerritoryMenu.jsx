@@ -19,46 +19,44 @@ export default function TerritoryMenu(props) {
           width: drawerWidth,
           height: height,
           position: 'absolute',
-          top: '100px',
+          top: '200px',
+          left: '240px'
         },
         root_close: {
           width: 0,
           height: height,
           position: 'absolute',
-          top: '100px',
+          top: '200px',
+          left: 0,
         },
         drawer: {
           flexShrink: 0,
           width: drawerWidth,
         },
         drawerPaper: {
-          top: '100px',
+          top: '200px',
           backgroundColor: 'transparent',
           height: height,
           width: drawerWidth,
+          left: 0,
         },
         drawerPaper_close: {
           backgroundColor: 'transparent',
-          top: '100px',
+          top: '200px',
           height: height,
           width: drawerWidth,
           left: '-240px',
         },
         opener: {
-          width: '75px',
-          height: '48px',
-          position: 'absolute',
-          left: '90%',
-          top: '15%',
-          transform: 'rotate(90deg)',
+          transform: 'rotate(45deg)',
         },
         opener_close: {
-          width: '75px',
-          height: '48px',
+        },
+        containerOpener: {
           position: 'absolute',
-          top: '15%',
-          left: 0,
-          transform: 'rotate(-90deg)',
+        },
+        containerOpener_close: {
+          position: 'absolute',
         }
       }} anchor={'left'}>
       {props.children}

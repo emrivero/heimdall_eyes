@@ -1,7 +1,7 @@
 import { Vector as VectorLayer } from "ol/layer";
 import { Vector as VectorSource } from "ol/source";
 import { Feature } from "ol";
-import { Polygon } from "ol/geom";
+import { Polygon, MultiPolygon } from "ol/geom";
 import Style from "ol/style/Style";
 import { Fill } from "ol/style";
 import { extent } from './constants';
@@ -24,7 +24,6 @@ export default class MistManager extends Parent {
 
     this.tokens = []
 
-
     this.on('created_tokens', tokens => {
       if (tokens.length > 0) {
         this.tokens = tokens;
@@ -32,10 +31,7 @@ export default class MistManager extends Parent {
       }
     });
 
-    this.translate.on('translating', () => {
-      this.createCircleMist()
-    });
-
+    this.addTranslateEvent();
     this.geometry = new Polygon([
       [
         [extent[0], extent[1]],
@@ -66,6 +62,8 @@ export default class MistManager extends Parent {
 
     this.layer.set('id', 'mist');
 
+    this.active = false;
+
 
     /**
      * Create mist style image
@@ -91,22 +89,49 @@ export default class MistManager extends Parent {
   addTo(map) {
     this.map = map;
     this.map.addLayer(this.layer);
+    this.layer.setVisible(false);
   }
 
+  setActive(flag) {
+    this.active = !!flag;
+    this.layer.setVisible(this.active);
+    if (flag) {
+      this.addTranslateEvent();
+    } else {
+      this.removeTranslaterEvent();
+    }
+  }
+
+  createCircleMistEvent = () => {
+    // this.createCircleMist();
+  };
+
+  addTranslateEvent = () => {
+    const id = this.translate.on('translating', this.createCircleMistEvent);
+    console.log(id);
+  };
+
+  removeTranslaterEvent = () => {
+    this.translate.un('translating', this.createCircleMistEvent);
+  };
 
   createCircleMist() {
-
-
     const polygonCoords = this.geometry.getCoordinates();
     let newGeom = new Polygon(polygonCoords);
+    let diff;
     this.tokens.forEach(token => {
+
       const coords = newGeom.getCoordinates();
       const coordinates = token.getContainerPolygon();
       const polygon = createPolygon(coords);
       const circle = createPolygon([coordinates]);
 
-      const diff = difference(polygon, circle);
+      diff = difference(polygon, circle);
+      if (diff.geometry.type === 'MultiPolygon') {
+        newGeom = new MultiPolygon();
+      }
       newGeom.setCoordinates(diff.geometry.coordinates);
+
     })
     this.feature.setGeometry(newGeom);
   }

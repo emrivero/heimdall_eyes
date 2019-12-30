@@ -7,7 +7,8 @@
     "start": "react-scripts start --no-cache",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && cp -r build/* docs/"
   },
   "keywords": [],
   "author": "",
@@ -17,7 +18,6 @@
     "@material-ui/styles": "^4.7.1",
     "@turf/circle": "^6.0.1",
     "@turf/difference": "^6.0.2",
-    "@turf/union": "^6.0.3",
     "classnames": "^2.2.6",
     "eslint": "^6.7.2",
     "eslint-plugin-flowtype": "^4.5.2",

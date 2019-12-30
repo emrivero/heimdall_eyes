@@ -8,7 +8,7 @@ export default function PlayersMenu(props) {
       inheritedClasses={{
         root: {
           top: 0,
-          left: 'calc(23% - 50px)',
+          left: 'calc(100% - 470px)',
           height: '220px',
           position: 'absolute',
         },
@@ -19,37 +19,43 @@ export default function PlayersMenu(props) {
           position: 'absolute',
         },
         drawerPaper: {
-          left: '24%',
+          width: '420px',
+          left: 'calc(100% - 420px)',
           top: 0,
           backgroundColor: 'transparent',
-          height: '250px',
+          height: 'unset',
+          maxHeight: '100%',
+          border: 'none'
         },
         drawerPaper_close: {
+          width: '420px',
           left: '100%',
           top: 0,
-          height: '250px',
-          backgroundColor: 'transparent'
+          backgroundColor: 'transparent',
+          height: 'unset',
+          maxHeight: '100%',
+          border: 'none'
         },
         opener: {
-          left: '10%',
-          width: '75px',
-          height: '48px',
-          position: 'absolute',
-          transform: 'rotate(-90deg)',
-          top: '50px'
+          transform: 'rotate(-45deg)',
         },
         opener_close: {
-          left: '90%',
-          width: '75px',
-          height: '48px',
+        },
+        containerOpener: {
+          zIndex: 2000,
+          top: '50px',
+          left: '10%',
           position: 'absolute',
-          transform: 'rotate(90deg)',
-          top: '50px'
+        },
+        containerOpener_close: {
+          top: '50px',
+          position: 'absolute',
+          left: '90%',
         },
         subcontainer: {
           display: 'flex',
-          height: "100%",
-          backgroundColor: '#000',
+          flexDirection: 'column',
+          maxHeight: '100%',
         }
       }} anchor={'right'}>
       {props.children}
