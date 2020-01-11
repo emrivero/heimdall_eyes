@@ -3,6 +3,7 @@ import dungeon from '../assets/images/levels/dungeon.png'
 import gunar from '../assets/images/pjs/gunar.png'
 import aliena from '../assets/images/pjs/aliena.png'
 import elba from '../assets/images/pjs/elba.png'
+
 import baseEnemy from 'assets/images/enemies/base.png';
 import eliteEnemy from 'assets/images/enemies/elite.png';
 import bossEnemy from 'assets/images/enemies/boss.png';
@@ -19,17 +20,23 @@ import banner_rojo from 'assets/images/banners/banner_rojo.png';
 export const enemyTokens = [{
     src: baseEnemy,
     size: [827, 827],
-    background: backgroundBase
+    background: backgroundBase,
+    level: 0,
+    coords: [500, 500],
   },
   {
     src: eliteEnemy,
     size: [827, 827],
-    background: backgroundElite
+    background: backgroundElite,
+    level: 1,
+    coords: [500, 500]
   },
   {
     src: bossEnemy,
     size: [827, 827],
-    background: backgroundBoss
+    background: backgroundBoss,
+    level: 2,
+    coords: [500, 500]
   }
 ];
 

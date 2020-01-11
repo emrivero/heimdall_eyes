@@ -43,13 +43,14 @@ class App extends React.Component {
         </TerritoryMenu>
 
         <EnemiesMenu>
-          {enemyTokens.map(enemy => <EnemyManager key={Math.random()} background={enemy.background} src={enemy.src} width={enemy.size[0] / 4} />)}
+          {enemyTokens.map(enemy => <EnemyManager key={Math.random()} background={enemy.background}
+            mapController={this.mapController} src={enemy.src} width={enemy.size[0] / 4} level={enemy.level} />)}
         </EnemiesMenu>
 
         <PlayersMenu>
-          {playerTokens.map(player => <PlayerManager key={player.id} id={player.id} 
-          mapController={this.mapController} background={player.background} 
-          src={player.src} width={player.size[0] / 5} />)}
+          {playerTokens.map(player => <PlayerManager key={player.id} id={player.id}
+            mapController={this.mapController} background={player.background}
+            src={player.src} width={player.size[0] / 5} />)}
         </PlayersMenu>
       </React.Fragment>
     );

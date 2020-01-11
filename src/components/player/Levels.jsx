@@ -90,8 +90,8 @@ class Levels extends React.Component {
 
     const newLevel = level - 1;
     const imgLevel = levels[newLevel];
-    if (newLevel > -11) {
-      this.props.onChangeDown(newLevel);
+    if (newLevel > -2) {
+      this.props.onChangeDown(newLevel, level);
       this.setState({
         level: newLevel,
         imgLevel
@@ -104,8 +104,8 @@ class Levels extends React.Component {
 
     const newLevel = level + 1;
     const imgLevel = levels[newLevel];
-    this.props.onChangeUp(newLevel);
-    if (newLevel < 11) {
+    if (newLevel < 1) {
+      this.props.onChangeUp(newLevel, level);
       this.setState({
         level: newLevel,
         imgLevel,

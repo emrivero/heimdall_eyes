@@ -77,6 +77,10 @@ export default class Territory extends Parent {
     }
   }
 
+  getActiveLevel() {
+    return this.gameLevels.find(lvl => lvl.number === this.activeLevel);
+  }
+
   /**
    * This method compared the equality of this instance and other object
    * 

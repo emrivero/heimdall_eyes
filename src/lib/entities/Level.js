@@ -58,6 +58,7 @@ export default class GameLevel extends Parent {
    * @public
    */
   addTo(map) {
+    this.map = map;
     map.addLayer(this.olLayer);
     this.tokens.forEach(token => {
       token.addTo(map);
@@ -71,12 +72,20 @@ export default class GameLevel extends Parent {
    * @public
    */
   addToken(token) {
+    if (!token.map) {
+      token.addTo(this.map);
+    }
     this.tokens.push(token);
     token.setActive(this.active);
   }
 
   removeToken(token) {
     this.tokens = this.tokens.filter(tkn => tkn.id !== token.id);
+  }
+
+  deleteToken(token) {
+    this.removeToken(token);
+    token.destroy();
   }
 
   setActive(flag) {

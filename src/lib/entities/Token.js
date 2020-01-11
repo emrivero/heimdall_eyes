@@ -73,6 +73,10 @@ export default class GameToken extends Parent {
      * @public
      */
     this.visionRange = options.visionRange || 1;
+
+    this.olLayer.set('id', this.id);
+
+    this.map = null;
   }
 
   /**
@@ -124,6 +128,10 @@ export default class GameToken extends Parent {
 
   getContainerPolygon() {
     return getRegularPolygon(this.getCoordinates(), this.visionRange, 60);
+  }
+
+  destroy() {
+    this.map.removeLayer(this.olLayer);
   }
 
   /**

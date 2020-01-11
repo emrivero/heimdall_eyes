@@ -39,23 +39,31 @@ const styles = theme => ({
  * @class
  */
 class PlayerManager extends React.Component {
+  constructor(props) {
+    super(props);
+    this.level = 0;
+    this.territory = 1;
+  }
 
-  onChangeUpLevel = (number) => {
-    const { id } = this.props;
+  onChangeUpLevel = (number, lastNumber) => {
+    const { id, mapController } = this.props;
+    this.level = number;
+    mapController.changeTokenLevel(id, number, lastNumber, this.territory);
   };
 
-  onChangeDownLevel = (number) => {
-    const { id } = this.props;
-
+  onChangeDownLevel = (number, lastNumber) => {
+    const { id, mapController } = this.props;
+    this.level = number;
+    mapController.changeTokenLevel(id, number, lastNumber, this.territory);
   };
 
   onChangeUpTerritory = (number) => {
-    const { id } = this.props;
+    // const { id, mapController } = this.props;
 
   };
 
   onChangeDownTerritory = (number) => {
-    const { id } = this.props;
+    // const { id, mapController } = this.props;
 
   };
 

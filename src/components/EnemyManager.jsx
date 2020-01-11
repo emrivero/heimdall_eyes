@@ -38,15 +38,26 @@ const styles = theme => {
  * @class
  */
 class EnemyManager extends React.Component {
+
+  add = () => {
+    const { level, mapController } = this.props;
+    mapController.addEnemyToken(level);
+  }
+
+  remove = () => {
+    const { level, mapController } = this.props;
+    mapController.removeEnemyToken(level);
+  }
+
   render() {
     const { classes, src, width, background } = this.props;
     return (
       <div className={classes.root} style={{ backgroundImage: `url(${background})` }}>
         <div className={classes.controls}>
-          <div className={classes.containerButtons}>
+          <div className={classes.containerButtons} onClick={this.add}>
             <img src={addSrc} alt="add" width="45" />
           </div>
-          <div className={classes.containerButtons}>
+          <div className={classes.containerButtons} onClick={this.remove}>
             <img src={removeSrc} alt="remove" width="45" />
           </div>
         </div>

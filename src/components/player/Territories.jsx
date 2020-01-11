@@ -83,7 +83,7 @@ class Territories extends React.Component {
 
     const newTerritory = territory + 1;
     const imgLevel = territories[newTerritory];
-    if (newTerritory < 11) {
+    if (newTerritory < 2) {
       this.props.onChangeUp(newTerritory);
       this.setState({
         territory: newTerritory,

@@ -1,5 +1,6 @@
 import Game from '../entities/Game';
-
+import { enemyTokens } from 'configuration/configuration';
+import GameToken from 'lib/entities/Token';
 class MapController {
 
   init() {
@@ -21,6 +22,41 @@ class MapController {
     this.game.territories.forEach((territory) => {
       territory.activateLevel(number);
     });
+  }
+
+  changeTokenLevel(id, level, lastLevel, territory) {
+    const gameTerritory = this.game.territories.find(terr => terr.number === territory);
+    if (gameTerritory) {
+      const currentLevel = gameTerritory.gameLevels.find(lvl => lvl.number === lastLevel);
+      const nextLevel = gameTerritory.gameLevels.find(lvl => lvl.number === level);
+      const token = currentLevel.tokens.find(tkn => tkn.id === id);
+      currentLevel.removeToken(token);
+      nextLevel.addToken(token);
+    }
+  }
+
+  addEnemyToken(enemyLevel) {
+    const territory = this.game.getActiveTerritory();
+    if (territory) {
+      const level = territory.getActiveLevel();
+      if (level) {
+        const options = enemyTokens[enemyLevel];
+        level.addToken(new GameToken({ ...options, id: `enemy_${enemyLevel}_${Math.random()}` }))
+      }
+    }
+  }
+
+  removeEnemyToken(enemyLevel) {
+    const territory = this.game.getActiveTerritory();
+    if (territory) {
+      const level = territory.getActiveLevel();
+      if (level) {
+        const token = level.tokens.find(token => token.id.startsWith(`enemy_${enemyLevel}`));
+        if (token) {
+          level.deleteToken(token);
+        }
+      }
+    }
   }
 }
 
