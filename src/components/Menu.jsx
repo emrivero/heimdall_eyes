@@ -10,6 +10,9 @@ const useStyles = makeStyles(theme => ({
   },
   right: {
     right: 0,
+  },
+  center: {
+    right: '40%'
   }
 }));
 
@@ -21,6 +24,10 @@ export default function Menu(props) {
   let rootClass = classes.root;
   if (anchor === 'right') {
     rootClass = classNames(classes.root, classes.right);
+  }
+
+  if (anchor === 'center') {
+    rootClass = classNames(classes.root, classes.center);
   }
 
   return (

@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "https://emrivero.github.io/heimdall_eyes/static/css/main.81c6b149.chunk.css",
-    "main.js": "https://emrivero.github.io/heimdall_eyes/static/js/main.dd1ea94a.chunk.js",
-    "main.js.map": "https://emrivero.github.io/heimdall_eyes/static/js/main.dd1ea94a.chunk.js.map",
+    "main.css": "https://emrivero.github.io/heimdall_eyes/static/css/main.1b872ed9.chunk.css",
+    "main.js": "https://emrivero.github.io/heimdall_eyes/static/js/main.a446c2f2.chunk.js",
+    "main.js.map": "https://emrivero.github.io/heimdall_eyes/static/js/main.a446c2f2.chunk.js.map",
     "runtime-main.js": "https://emrivero.github.io/heimdall_eyes/static/js/runtime-main.24bfd65b.js",
     "runtime-main.js.map": "https://emrivero.github.io/heimdall_eyes/static/js/runtime-main.24bfd65b.js.map",
-    "static/js/2.49acd9cb.chunk.js": "https://emrivero.github.io/heimdall_eyes/static/js/2.49acd9cb.chunk.js",
-    "static/js/2.49acd9cb.chunk.js.map": "https://emrivero.github.io/heimdall_eyes/static/js/2.49acd9cb.chunk.js.map",
+    "static/js/2.88ee2413.chunk.js": "https://emrivero.github.io/heimdall_eyes/static/js/2.88ee2413.chunk.js",
+    "static/js/2.88ee2413.chunk.js.map": "https://emrivero.github.io/heimdall_eyes/static/js/2.88ee2413.chunk.js.map",
     "index.html": "https://emrivero.github.io/heimdall_eyes/index.html",
-    "precache-manifest.71eabe33e5476be1934cb682df4d26db.js": "https://emrivero.github.io/heimdall_eyes/precache-manifest.71eabe33e5476be1934cb682df4d26db.js",
+    "precache-manifest.b722f0a3186e3fb486b2d63819632b51.js": "https://emrivero.github.io/heimdall_eyes/precache-manifest.b722f0a3186e3fb486b2d63819632b51.js",
     "service-worker.js": "https://emrivero.github.io/heimdall_eyes/service-worker.js",
-    "static/css/main.81c6b149.chunk.css.map": "https://emrivero.github.io/heimdall_eyes/static/css/main.81c6b149.chunk.css.map",
-    "static/js/2.49acd9cb.chunk.js.LICENSE": "https://emrivero.github.io/heimdall_eyes/static/js/2.49acd9cb.chunk.js.LICENSE",
+    "static/css/main.1b872ed9.chunk.css.map": "https://emrivero.github.io/heimdall_eyes/static/css/main.1b872ed9.chunk.css.map",
+    "static/js/2.88ee2413.chunk.js.LICENSE": "https://emrivero.github.io/heimdall_eyes/static/js/2.88ee2413.chunk.js.LICENSE",
+    "static/media/index.css": "https://emrivero.github.io/heimdall_eyes/static/media/fondo.f4ee3703.jpg",
     "static/media/aliena.png": "https://emrivero.github.io/heimdall_eyes/static/media/aliena.149752c0.png",
     "static/media/baelos.png": "https://emrivero.github.io/heimdall_eyes/static/media/baelos.8a9d2adf.png",
     "static/media/banner_azul.png": "https://emrivero.github.io/heimdall_eyes/static/media/banner_azul.dc31dbc3.png",
@@ -33,7 +34,6 @@
     "static/media/farton.png": "https://emrivero.github.io/heimdall_eyes/static/media/farton.0efb7889.png",
     "static/media/flechas_inferior.png": "https://emrivero.github.io/heimdall_eyes/static/media/flechas_inferior.8a6fc9c0.png",
     "static/media/flechas_superior.png": "https://emrivero.github.io/heimdall_eyes/static/media/flechas_superior.e1a469cf.png",
-    "static/media/index.css": "https://emrivero.github.io/heimdall_eyes/static/media/fondo.f4ee3703.jpg",
     "static/media/gema_verde.png": "https://emrivero.github.io/heimdall_eyes/static/media/gema_verde.506ffbc6.png",
     "static/media/gunar.png": "https://emrivero.github.io/heimdall_eyes/static/media/gunar.4af1d9ae.png",
     "static/media/mapa_1.png": "https://emrivero.github.io/heimdall_eyes/static/media/mapa_1.049d7ba8.png",
@@ -71,14 +71,15 @@
     "static/media/nivel_9.png": "https://emrivero.github.io/heimdall_eyes/static/media/nivel_9.6d781354.png",
     "static/media/opener_menu.png": "https://emrivero.github.io/heimdall_eyes/static/media/opener_menu.abf5d192.png",
     "static/media/restar_enemigos.png": "https://emrivero.github.io/heimdall_eyes/static/media/restar_enemigos.28db9160.png",
+    "static/media/rondas.png": "https://emrivero.github.io/heimdall_eyes/static/media/rondas.e5da4948.png",
     "static/media/rumple.png": "https://emrivero.github.io/heimdall_eyes/static/media/rumple.e440c5b3.png",
     "static/media/sumar_enemigos.png": "https://emrivero.github.io/heimdall_eyes/static/media/sumar_enemigos.d7f89fa5.png",
     "static/media/wulf.png": "https://emrivero.github.io/heimdall_eyes/static/media/wulf.cb7dc7f5.png"
   },
   "entrypoints": [
     "static/js/runtime-main.24bfd65b.js",
-    "static/js/2.49acd9cb.chunk.js",
-    "static/css/main.81c6b149.chunk.css",
-    "static/js/main.dd1ea94a.chunk.js"
+    "static/js/2.88ee2413.chunk.js",
+    "static/css/main.1b872ed9.chunk.css",
+    "static/js/main.a446c2f2.chunk.js"
   ]
 }

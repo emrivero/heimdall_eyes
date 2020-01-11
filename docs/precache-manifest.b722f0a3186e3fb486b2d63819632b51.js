@@ -1,27 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "82b70385fcc6f38d0a9e642cba7c260c",
+    "revision": "30dff20aa07925e2e65acfaf5f1bc663",
     "url": "https://emrivero.github.io/heimdall_eyes/index.html"
   },
   {
-    "revision": "3cf0e1c0a9be3851a227",
-    "url": "https://emrivero.github.io/heimdall_eyes/static/css/main.81c6b149.chunk.css"
+    "revision": "ef4a216876fe8311561f",
+    "url": "https://emrivero.github.io/heimdall_eyes/static/css/main.1b872ed9.chunk.css"
   },
   {
-    "revision": "ccdfb6f8c9dda3921ade",
-    "url": "https://emrivero.github.io/heimdall_eyes/static/js/2.49acd9cb.chunk.js"
+    "revision": "4de7ba4c630d438bcfda",
+    "url": "https://emrivero.github.io/heimdall_eyes/static/js/2.88ee2413.chunk.js"
   },
   {
     "revision": "457601a85c8c817f4e2950577b4cd3a6",
-    "url": "https://emrivero.github.io/heimdall_eyes/static/js/2.49acd9cb.chunk.js.LICENSE"
+    "url": "https://emrivero.github.io/heimdall_eyes/static/js/2.88ee2413.chunk.js.LICENSE"
   },
   {
-    "revision": "3cf0e1c0a9be3851a227",
-    "url": "https://emrivero.github.io/heimdall_eyes/static/js/main.dd1ea94a.chunk.js"
+    "revision": "ef4a216876fe8311561f",
+    "url": "https://emrivero.github.io/heimdall_eyes/static/js/main.a446c2f2.chunk.js"
   },
   {
     "revision": "c574b20449e6766fd3c8",
     "url": "https://emrivero.github.io/heimdall_eyes/static/js/runtime-main.24bfd65b.js"
+  },
+  {
+    "revision": "385b2e844755c43a7bf26dbc7de55fd2",
+    "url": "https://emrivero.github.io/heimdall_eyes/static/media/Augusta.385b2e84.ttf"
   },
   {
     "revision": "149752c04764234f17b88a3d6d8d8c2f",
@@ -258,6 +262,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "28db9160f9d6ca516009b1d02bf037df",
     "url": "https://emrivero.github.io/heimdall_eyes/static/media/restar_enemigos.28db9160.png"
+  },
+  {
+    "revision": "e5da4948dfd75962dfb00e516c005cab",
+    "url": "https://emrivero.github.io/heimdall_eyes/static/media/rondas.e5da4948.png"
   },
   {
     "revision": "e440c5b3ac5fee859f4418b8615a707b",

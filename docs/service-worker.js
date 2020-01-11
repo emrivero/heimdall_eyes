@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "https://emrivero.github.io/heimdall_eyes/precache-manifest.71eabe33e5476be1934cb682df4d26db.js"
+  "https://emrivero.github.io/heimdall_eyes/precache-manifest.b722f0a3186e3fb486b2d63819632b51.js"
 );
 
 self.addEventListener('message', (event) => {
