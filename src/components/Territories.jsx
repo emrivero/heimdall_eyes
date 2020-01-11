@@ -14,6 +14,7 @@ import flecha_superior from 'assets/images/controls/flechas_superior.png';
 import { withStyles } from '@material-ui/core/styles';
 import classNames from 'classnames';
 
+
 const styles = theme => ({
   root: {
     display: 'flex',
@@ -57,36 +58,43 @@ class Territories extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      level: 0,
+      territory: 1,
       imgLevel: mapa_1,
     }
+    this.mapController = props.mapController;
   }
 
   onChangeDown = () => {
-    const { level } = this.state;
+    const { territory } = this.state;
 
-    const newTerritory = level - 1;
+    const newTerritory = territory - 1;
     const imgLevel = territories[newTerritory];
     if (newTerritory > 0) {
+      this.changeMapTerritory(newTerritory);
       this.setState({
-        level: newTerritory,
+        territory: newTerritory,
         imgLevel
       });
     }
   };
 
   onChangeUp = () => {
-    const { level } = this.state;
+    const { territory } = this.state;
 
-    const newTerritory = level + 1;
+    const newTerritory = territory + 1;
     const imgLevel = territories[newTerritory];
     if (newTerritory < 11) {
+      this.changeMapTerritory(newTerritory);
       this.setState({
-        level: newTerritory,
+        territory: newTerritory,
         imgLevel,
       });
     }
   };
+
+  changeMapTerritory = (territory) => {
+    this.mapController.changeMapTerritory(territory);
+  }
 
   render() {
     const { classes, inheritedClasses } = this.props;

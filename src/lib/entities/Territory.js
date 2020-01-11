@@ -1,6 +1,6 @@
 import { generateID } from '../util'
 import Parent from './Parent';
-import GameLevel from './GameLevel';
+import GameLevel from './Level';
 
 /**
  * @classdesc
@@ -27,26 +27,54 @@ export default class Territory extends Parent {
     this.active = !!options.active;
 
     /**
+     * @public
+     */
+    this.number = options.number;
+
+    /**
+     * @public
+     */
+    this.activeLevel = 0;
+
+    /**
      * @public 
      * @type {OLImageLayer}
      */
-    this.gameLevels = options.gameLevels.map(config => new GameLevel({ ...config, active: this.active }));
-
+    this.gameLevels = options.gameLevels.map(config => new GameLevel({ ...config }));
   }
 
   addTo(map) {
-    this.gameLevels.forEach(gameLevel => gameLevel.addTo(map));
+    this.gameLevels.forEach((gameLevel) => {
+      gameLevel.addTo(map);
+      if (this.active) {
+        gameLevel.setActive(false);
+        if (gameLevel.number === 0) {
+          gameLevel.setActive(true);
+        }
+      }
+    });
   }
 
-
-  activate() {
-    this.active = true;
-    this.gameLevels.forEach(gameLevel => gameLevel.activate());
+  setActive(flag) {
+    this.active = flag;
+    this.gameLevels.forEach((gameLevel) => {
+      gameLevel.setActive(false);
+      if (gameLevel.number === this.activeLevel) {
+        gameLevel.setActive(this.active);
+      }
+    });
   }
 
-  deactivate() {
-    this.active = false;
-    this.gameLevels.forEach(gameLevel => gameLevel.deactivate());
+  activateLevel(level) {
+    this.activeLevel = level;
+    if (this.active) {
+      this.gameLevels.forEach((gameLevel) => {
+        gameLevel.setActive(false);
+        if (gameLevel.number === level) {
+          gameLevel.setActive(true);
+        }
+      });
+    }
   }
 
   /**

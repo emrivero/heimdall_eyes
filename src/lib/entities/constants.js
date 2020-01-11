@@ -8,7 +8,7 @@ const buffer = 500;
 /**
  * @constant
  */
-export const extent = [0, 0, 1024, 768];
+export const extent = [0, 0, 3594, 2019];
 
 /**
  * @constant

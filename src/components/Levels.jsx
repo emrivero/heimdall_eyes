@@ -81,7 +81,8 @@ class Levels extends React.Component {
     this.state = {
       level: 0,
       imgLevel: nivel_0,
-    }
+    };
+    this.mapController = props.mapController;
   }
 
   onChangeDown = () => {
@@ -90,6 +91,7 @@ class Levels extends React.Component {
     const newLevel = level - 1;
     const imgLevel = levels[newLevel];
     if (newLevel > -11) {
+      this.changeMapLevel(newLevel)
       this.setState({
         level: newLevel,
         imgLevel
@@ -103,12 +105,17 @@ class Levels extends React.Component {
     const newLevel = level + 1;
     const imgLevel = levels[newLevel];
     if (newLevel < 11) {
+      this.changeMapLevel(newLevel)
       this.setState({
         level: newLevel,
         imgLevel,
       });
     }
   };
+
+  changeMapLevel = (level) => {
+    this.mapController.changeMapLevel(level);
+  }
 
   render() {
     const { classes, inheritedClasses } = this.props;

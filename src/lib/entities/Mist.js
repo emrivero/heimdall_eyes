@@ -107,8 +107,7 @@ export default class MistManager extends Parent {
   };
 
   addTranslateEvent = () => {
-    const id = this.translate.on('translating', this.createCircleMistEvent);
-    console.log(id);
+    // const id = this.translate.on('translating', this.createCircleMistEvent);
   };
 
   removeTranslaterEvent = () => {

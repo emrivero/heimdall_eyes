@@ -8,10 +8,19 @@ class MapController {
     const { games } = this.configuration;
 
     this.game = new Game(games[0]);
+    window.game = this.game;
   }
 
-  setActive(name) {
-    this.game.setActive(name);
+  changeMapTerritory(number) {
+    this.game.territories.forEach((territory) => {
+      territory.setActive(number === territory.number);
+    });
+  }
+
+  changeMapLevel(number) {
+    this.game.territories.forEach((territory) => {
+      territory.activateLevel(number);
+    });
   }
 }
 

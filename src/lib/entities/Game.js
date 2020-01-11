@@ -42,27 +42,32 @@ export default class Game extends Parent {
         extent: limit,
       }),
     });
-
+    window.map = this.map;
+    window.game = this;
+    /**
+     * @public
+     */
     this.translate = new Translate({
       filter: (feature, layer) => layer.get('id') !== 'mist',
     });
-    this.map.addInteraction(this.translate);
 
+    /**
+     * @public
+     */
     this.mistManger = new MistManager(this.translate);
 
-    this.mistManger.addTo(this.map);
-    window.game = this;
     /**
      * @public
      */
     this.territories = options.territories.map(config => new Territory(config));
 
+    this.map.addInteraction(this.translate);
+    this.mistManger.addTo(this.map);
     this.territories.forEach(territory => territory.addTo(this.map));
   }
 
-  setActive(name) {
-    this.territories.forEach(territory => territory.deactivate());
-    this.territories.find(territory => territory.name === name).activate();
+  getActiveTerritory() {
+    return this.territories.find(territory => territory.active);
   }
 
   /**

@@ -36,7 +36,7 @@ function TerritoryPreview(props) {
       <div className={classes.title}>
         <Typography align="center" variant="h4">{props.id}</Typography>
       </div>
-      <img src={props.src} onClick={() => props.onClick(props.name)} alt="territory" className={classes.img} />
+      <img src={props.src} onClick={() => props.onClick(props.number)} alt="territory" className={classes.img} />
     </div>
   );
 }
