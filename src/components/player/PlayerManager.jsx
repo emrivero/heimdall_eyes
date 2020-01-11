@@ -10,10 +10,10 @@ const styles = theme => ({
     alignItems: 'center',
     backgroundColor: 'transparent',
     borderRadius: '5px',
-    backgroundSize: 'contain',
+    backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     justifyContent: 'center',
-    height: '220px',
+    height: '250px',
   },
   imgContainer: {
     cursor: 'pointer',

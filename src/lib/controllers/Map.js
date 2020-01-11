@@ -40,8 +40,14 @@ class MapController {
     if (territory) {
       const level = territory.getActiveLevel();
       if (level) {
+        const { map } = this.game;
+        const view = map.getView();
         const options = enemyTokens[enemyLevel];
-        level.addToken(new GameToken({ ...options, id: `enemy_${enemyLevel}_${Math.random()}` }))
+        let coordinates = options.coords;
+        if (view) {
+          coordinates = view.getCenter();
+        }
+        level.addToken(new GameToken({ ...options, coords: coordinates, id: `enemy_${enemyLevel}_${Math.random()}` }))
       }
     }
   }
