@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "dcbdbf8db6322e685d2b70884a301d0f",
+    "revision": "82b70385fcc6f38d0a9e642cba7c260c",
     "url": "https://emrivero.github.io/heimdall_eyes/index.html"
   },
   {
-    "revision": "ee82ff4f6a475570a060",
+    "revision": "3cf0e1c0a9be3851a227",
     "url": "https://emrivero.github.io/heimdall_eyes/static/css/main.81c6b149.chunk.css"
   },
   {
-    "revision": "d696941f6ef112c070a4",
-    "url": "https://emrivero.github.io/heimdall_eyes/static/js/2.4e149bbe.chunk.js"
+    "revision": "ccdfb6f8c9dda3921ade",
+    "url": "https://emrivero.github.io/heimdall_eyes/static/js/2.49acd9cb.chunk.js"
   },
   {
     "revision": "457601a85c8c817f4e2950577b4cd3a6",
-    "url": "https://emrivero.github.io/heimdall_eyes/static/js/2.4e149bbe.chunk.js.LICENSE"
+    "url": "https://emrivero.github.io/heimdall_eyes/static/js/2.49acd9cb.chunk.js.LICENSE"
   },
   {
-    "revision": "ee82ff4f6a475570a060",
-    "url": "https://emrivero.github.io/heimdall_eyes/static/js/main.cbd375f6.chunk.js"
+    "revision": "3cf0e1c0a9be3851a227",
+    "url": "https://emrivero.github.io/heimdall_eyes/static/js/main.dd1ea94a.chunk.js"
   },
   {
     "revision": "c574b20449e6766fd3c8",
@@ -26,6 +26,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "149752c04764234f17b88a3d6d8d8c2f",
     "url": "https://emrivero.github.io/heimdall_eyes/static/media/aliena.149752c0.png"
+  },
+  {
+    "revision": "8a9d2adff6f562edcc8f8e4768f00ffb",
+    "url": "https://emrivero.github.io/heimdall_eyes/static/media/baelos.8a9d2adf.png"
   },
   {
     "revision": "dc31dbc365923e9fab5c402443b7edf0",
@@ -42,6 +46,22 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "cbcf4011a848053db64294adce3ed228",
     "url": "https://emrivero.github.io/heimdall_eyes/static/media/banner_enemigo_elite.cbcf4011.png"
+  },
+  {
+    "revision": "2ec5eb2f122f65af964df04f2a0ea720",
+    "url": "https://emrivero.github.io/heimdall_eyes/static/media/banner_marron.2ec5eb2f.png"
+  },
+  {
+    "revision": "113e2d2939ab19fda07086d0f85bdea7",
+    "url": "https://emrivero.github.io/heimdall_eyes/static/media/banner_morado.113e2d29.png"
+  },
+  {
+    "revision": "fa26de9bc4bb8099fa8210141aa2b998",
+    "url": "https://emrivero.github.io/heimdall_eyes/static/media/banner_naranja.fa26de9b.png"
+  },
+  {
+    "revision": "3e2bd878a3e6e351e7e39b0df1b53867",
+    "url": "https://emrivero.github.io/heimdall_eyes/static/media/banner_negro.3e2bd878.png"
   },
   {
     "revision": "d3ad0b5a3409fd9450e37782917aab81",
@@ -70,6 +90,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "0e52328a5a390b506697f7f194b59d82",
     "url": "https://emrivero.github.io/heimdall_eyes/static/media/elite.0e52328a.png"
+  },
+  {
+    "revision": "dcb11a36bf67f5c637318bc8a784377c",
+    "url": "https://emrivero.github.io/heimdall_eyes/static/media/etrion.dcb11a36.png"
   },
   {
     "revision": "0efb78892262e8bb790b871929d04e4b",
@@ -236,7 +260,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://emrivero.github.io/heimdall_eyes/static/media/restar_enemigos.28db9160.png"
   },
   {
+    "revision": "e440c5b3ac5fee859f4418b8615a707b",
+    "url": "https://emrivero.github.io/heimdall_eyes/static/media/rumple.e440c5b3.png"
+  },
+  {
     "revision": "d7f89fa5e17c34a8aeadacaf9536cd7d",
     "url": "https://emrivero.github.io/heimdall_eyes/static/media/sumar_enemigos.d7f89fa5.png"
+  },
+  {
+    "revision": "cb7dc7f53245b6db3dded6aa9e3e65cb",
+    "url": "https://emrivero.github.io/heimdall_eyes/static/media/wulf.cb7dc7f5.png"
   }
 ]);
