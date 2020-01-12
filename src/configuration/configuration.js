@@ -115,7 +115,7 @@ const rumpleToken = {
 
 
 export const playerTokens = [
-  gunarToken, alienaToken, elbaToken, etrionToken, wulfToken, baelosToken, rumpleToken
+  gunarToken, alienaToken, etrionToken, rumpleToken
 ];
 
 const fartonLevel = {

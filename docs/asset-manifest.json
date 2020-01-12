@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "https://emrivero.github.io/heimdall_eyes/static/css/main.1b872ed9.chunk.css",
-    "main.js": "https://emrivero.github.io/heimdall_eyes/static/js/main.a446c2f2.chunk.js",
-    "main.js.map": "https://emrivero.github.io/heimdall_eyes/static/js/main.a446c2f2.chunk.js.map",
+    "main.js": "https://emrivero.github.io/heimdall_eyes/static/js/main.52b25a04.chunk.js",
+    "main.js.map": "https://emrivero.github.io/heimdall_eyes/static/js/main.52b25a04.chunk.js.map",
     "runtime-main.js": "https://emrivero.github.io/heimdall_eyes/static/js/runtime-main.24bfd65b.js",
     "runtime-main.js.map": "https://emrivero.github.io/heimdall_eyes/static/js/runtime-main.24bfd65b.js.map",
     "static/js/2.88ee2413.chunk.js": "https://emrivero.github.io/heimdall_eyes/static/js/2.88ee2413.chunk.js",
     "static/js/2.88ee2413.chunk.js.map": "https://emrivero.github.io/heimdall_eyes/static/js/2.88ee2413.chunk.js.map",
     "index.html": "https://emrivero.github.io/heimdall_eyes/index.html",
-    "precache-manifest.b722f0a3186e3fb486b2d63819632b51.js": "https://emrivero.github.io/heimdall_eyes/precache-manifest.b722f0a3186e3fb486b2d63819632b51.js",
+    "precache-manifest.f3b93048f2947fa74ce9dbaa19cffb60.js": "https://emrivero.github.io/heimdall_eyes/precache-manifest.f3b93048f2947fa74ce9dbaa19cffb60.js",
     "service-worker.js": "https://emrivero.github.io/heimdall_eyes/service-worker.js",
     "static/css/main.1b872ed9.chunk.css.map": "https://emrivero.github.io/heimdall_eyes/static/css/main.1b872ed9.chunk.css.map",
     "static/js/2.88ee2413.chunk.js.LICENSE": "https://emrivero.github.io/heimdall_eyes/static/js/2.88ee2413.chunk.js.LICENSE",
@@ -80,6 +80,6 @@
     "static/js/runtime-main.24bfd65b.js",
     "static/js/2.88ee2413.chunk.js",
     "static/css/main.1b872ed9.chunk.css",
-    "static/js/main.a446c2f2.chunk.js"
+    "static/js/main.52b25a04.chunk.js"
   ]
 }
